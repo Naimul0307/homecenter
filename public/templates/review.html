@@ -39,14 +39,7 @@
                     <p class="greeting">Dear Arja</p>
                     <p class="thank-you">Thank you for</p>
                     <ul class="items-list">
-                        <li>Being the emotional anchor</li>
-                        <li>All the sleepless nights and sacrifices</li>
-                        <li>Holding the family together</li>
-                        <li>Breaking barriers at work</li>
-                        <li>Being the safe space</li>
-                        <li>Instilling confidence and resilience</li>
-                        <li>Creating a sense of home</li>
-                        <li>Silently enduring struggles</li>
+
                     </ul>
         
                     <hr class="divider">
@@ -68,17 +61,66 @@
     </div>
 
     <script>
-        // Show the receipt popup and overlay
-        document.getElementById("review-confirm-btn").addEventListener("click", function () {
-            document.getElementById("receipt-container").style.display = "flex";
-            document.getElementById("overlay").style.display = "block"; // Show overlay
+document.addEventListener("DOMContentLoaded", function () {
+    // Ensure the receipt and overlay are hidden on page load
+    document.getElementById("receipt-container").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+
+    // Get the userContributions data from local storage
+    const storedUserContributions = localStorage.getItem("userContributions");
+
+    let userName = "Dear User";
+    let selectedContributions = [];
+
+    // Parse the data from local storage
+    if (storedUserContributions) {
+        try {
+            const userContributionsData = JSON.parse(storedUserContributions);
+            userName = userContributionsData.name || "Dear User";
+            selectedContributions = userContributionsData.contributions || [];
+        } catch (e) {
+            console.error("Error parsing user contributions:", e);
+            selectedContributions = [];
+        }
+    }
+
+    // Debugging: Log the parsed data
+    console.log("User Name:", userName);
+    console.log("Contributions:", selectedContributions);
+
+    // Update the greeting with the user's name
+    document.querySelector(".greeting").textContent = `Dear ${userName}`;
+
+    // Update the items list with selected contributions
+    const itemsList = document.querySelector(".items-list");
+    itemsList.innerHTML = ""; // Clear existing list
+
+    if (selectedContributions.length > 0) {
+        selectedContributions.forEach(contribution => {
+            const listItem = document.createElement("li");
+            listItem.textContent = contribution;
+            itemsList.appendChild(listItem);
         });
-    
-        // Close the receipt popup and overlay
-        document.getElementById("close-btn").addEventListener("click", function () {
-            document.getElementById("receipt-container").style.display = "none";
-            document.getElementById("overlay").style.display = "none"; // Hide overlay
-        });
+    } else {
+        // If no contributions found, show default text
+        const listItem = document.createElement("li");
+        listItem.textContent = "No contributions selected.";
+        itemsList.appendChild(listItem);
+    }
+
+    // Show the receipt popup and overlay on button click
+    document.getElementById("review-confirm-btn").addEventListener("click", function () {
+        document.getElementById("receipt-container").style.display = "flex";
+        document.getElementById("overlay").style.display = "block";
+    });
+
+    // Close the receipt popup and overlay
+    document.getElementById("close-btn").addEventListener("click", function () {
+        document.getElementById("receipt-container").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    });
+});
+
     </script>
     
 </body>

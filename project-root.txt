@@ -1,4 +1,4 @@
-project-root/
+\homecenter/
 ├── public/
 │   ├── css/
 │   │   ├── styles.css
