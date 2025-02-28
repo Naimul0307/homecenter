@@ -27,7 +27,7 @@
                 })
                 .catch(error => console.error('Error loading XML:', error));
         }
-
+        
         // Save selected contributions to local storage
         function saveSelection() {
             let selectedButtons = document.querySelectorAll(".contribution-btn.selected");
@@ -40,12 +40,20 @@
                 return;
             }
 
+            // Create user data object
             let userData = {
                 name: userName,
                 contributions: selectedValues
             };
 
-            localStorage.setItem("userContributions", JSON.stringify(userData));
+            // Retrieve existing user data from localStorage, or initialize an empty array if no data exists
+            let allUserData = JSON.parse(localStorage.getItem("allUserContributions")) || [];
+
+            // Add the new user's data to the array
+            allUserData.push(userData);
+
+            // Save the updated array back to localStorage
+            localStorage.setItem("allUserContributions", JSON.stringify(allUserData));
 
             // Redirect to contributionText.html after saving
             window.location.href = "review.html";  

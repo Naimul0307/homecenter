@@ -61,65 +61,69 @@
     </div>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Ensure the receipt and overlay are hidden on page load
-    document.getElementById("receipt-container").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ensure the receipt and overlay are hidden on page load
+            document.getElementById("receipt-container").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
 
-    // Get the userContributions data from local storage
-    const storedUserContributions = localStorage.getItem("userContributions");
+            // Get all user contributions data from localStorage
+            const storedAllUserContributions = localStorage.getItem("allUserContributions");
 
-    let userName = "Dear User";
-    let selectedContributions = [];
+            let userName = "Dear User";
+            let selectedContributions = [];
 
-    // Parse the data from local storage
-    if (storedUserContributions) {
-        try {
-            const userContributionsData = JSON.parse(storedUserContributions);
-            userName = userContributionsData.name || "Dear User";
-            selectedContributions = userContributionsData.contributions || [];
-        } catch (e) {
-            console.error("Error parsing user contributions:", e);
-            selectedContributions = [];
-        }
-    }
+            // Parse the data from localStorage
+            if (storedAllUserContributions) {
+                try {
+                    const allUserContributionsData = JSON.parse(storedAllUserContributions);
+                    if (allUserContributionsData.length > 0) {
+                        // Get the last user's data
+                        const lastUserData = allUserContributionsData[allUserContributionsData.length - 1];
+                        userName = lastUserData.name || "Dear User";
+                        selectedContributions = lastUserData.contributions || [];
+                    }
+                } catch (e) {
+                    console.error("Error parsing user contributions:", e);
+                    selectedContributions = [];
+                }
+            }
 
-    // Debugging: Log the parsed data
-    console.log("User Name:", userName);
-    console.log("Contributions:", selectedContributions);
+            // Debugging: Log the parsed data
+            console.log("User Name:", userName);
+            console.log("Contributions:", selectedContributions);
 
-    // Update the greeting with the user's name
-    document.querySelector(".greeting").textContent = `Dear ${userName}`;
+            // Update the greeting with the user's name
+            document.querySelector(".greeting").textContent = `Dear ${userName}`;
 
-    // Update the items list with selected contributions
-    const itemsList = document.querySelector(".items-list");
-    itemsList.innerHTML = ""; // Clear existing list
+            // Update the items list with selected contributions
+            const itemsList = document.querySelector(".items-list");
+            itemsList.innerHTML = ""; // Clear existing list
 
-    if (selectedContributions.length > 0) {
-        selectedContributions.forEach(contribution => {
-            const listItem = document.createElement("li");
-            listItem.textContent = contribution;
-            itemsList.appendChild(listItem);
+            if (selectedContributions.length > 0) {
+                selectedContributions.forEach(contribution => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = contribution;
+                    itemsList.appendChild(listItem);
+                });
+            } else {
+                // If no contributions found, show default text
+                const listItem = document.createElement("li");
+                listItem.textContent = "No contributions selected.";
+                itemsList.appendChild(listItem);
+            }
+
+            // Show the receipt popup and overlay on button click
+            document.getElementById("review-confirm-btn").addEventListener("click", function () {
+                document.getElementById("receipt-container").style.display = "flex";
+                document.getElementById("overlay").style.display = "block";
+            });
+
+            // Close the receipt popup and overlay
+            document.getElementById("close-btn").addEventListener("click", function () {
+                document.getElementById("receipt-container").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+            });
         });
-    } else {
-        // If no contributions found, show default text
-        const listItem = document.createElement("li");
-        listItem.textContent = "No contributions selected.";
-        itemsList.appendChild(listItem);
-    }
-
-    // Show the receipt popup and overlay on button click
-    document.getElementById("review-confirm-btn").addEventListener("click", function () {
-        document.getElementById("receipt-container").style.display = "flex";
-        document.getElementById("overlay").style.display = "block";
-    });
-
-    // Close the receipt popup and overlay
-    document.getElementById("close-btn").addEventListener("click", function () {
-        document.getElementById("receipt-container").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
-    });
-});
 
     </script>
     
