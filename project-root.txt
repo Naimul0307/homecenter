@@ -1,0 +1,10 @@
+project-root/
+├── public/
+│   ├── css/
+│   │   ├── styles.css
+│   ├── js/
+│   │   ├── script.js
+│   ├── index.html       # Home Page
+│   ├── submit.html      # Name Submission Page
+│   ├── contribution.html # Contribution Page
+│   ├── contributionText.html # Contribution Text Page

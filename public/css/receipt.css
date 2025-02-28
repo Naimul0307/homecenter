@@ -1,0 +1,128 @@
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Ensure it is hidden initially */
+    z-index: 998;
+}
+
+.receipt-container {
+    display: none; /* Make sure it's hidden initially */
+    width: 350px;
+    padding: 20px;
+    border: 2px dashed #f72d84;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+
+.receipt-header {
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.receipt-title {
+    font-size: 32px;
+    color: #4F4F4F;
+    margin-top: 10px;
+}
+
+.receipt-body {
+    margin-top: 20px;
+}
+
+.greeting {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.thank-you {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.items-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.items-list li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.divider {
+    border-top: 2px dashed #f72d84;
+    margin: 20px 0;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.price {
+    color: #f72d84;
+}
+
+.tribute {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.tribute-text {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.you-are {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f72d84;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-pattern {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #f72d84;
+}

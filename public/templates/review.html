@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/review.css">
+    <link rel="stylesheet" href="../css/receipt.css">
+    <title>HomeCentre - Review</title>
+</head>
+<body>
+    <div class="review-container">
+        <div class="review-header">
+            <img src="https://via.placeholder.com/150" alt="Homecentre Logo" class="logo">
+            <h1 class="review-title">homecentre</h1>
+        </div>
+
+        <div class="review-body">
+            <p class="message">The Heart of Every Home Beats with You</p>
+            <p class="description">Behind every cozy space, every cherished memory, and every heartwarming moment is you, the woman who makes it all possible.</p>
+            <button class="confirm-button" id="review-confirm-btn">REVIEW AND CONFIRM</button>
+        </div>
+    </div>
+
+    
+    <!-- Hidden Receipt Popup -->
+    <div class="overlay" id="overlay">
+        <div class="receipt-container" id="receipt-container">
+            <div class="receipt-content">
+                <button class="close-btn" id="close-btn">&times;</button> <!-- Close Button -->
+    
+                <div class="receipt-header">
+                    <img src="https://via.placeholder.com/150" alt="Homecentre Logo" class="logo">
+                    <h1 class="receipt-title">homecentre</h1>
+                </div>
+    
+                <hr class="divider">
+                
+                <div class="receipt-body">
+                    <p class="greeting">Dear Arja</p>
+                    <p class="thank-you">Thank you for</p>
+                    <ul class="items-list">
+                        <li>Being the emotional anchor</li>
+                        <li>All the sleepless nights and sacrifices</li>
+                        <li>Holding the family together</li>
+                        <li>Breaking barriers at work</li>
+                        <li>Being the safe space</li>
+                        <li>Instilling confidence and resilience</li>
+                        <li>Creating a sense of home</li>
+                        <li>Silently enduring struggles</li>
+                    </ul>
+        
+                    <hr class="divider">
+        
+                    <p class="total">Total : <span class="price">PRICELESS</span></p>
+        
+                    <hr class="divider">
+        
+                    <p class="tribute">This isn’t just a receipt. It’s a tribute.</p>
+                    <p class="tribute-text">To the love, the sacrifices, the strength that hold homes together.</p>
+                    <p class="you-are">YOU are seen. YOU are valued. YOU are extraordinary.</p>
+                </div>
+                <div class="footer">
+                    <img src="https://via.placeholder.com/150x50" alt="Footer Pattern" class="footer-pattern">
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        // Show the receipt popup and overlay
+        document.getElementById("review-confirm-btn").addEventListener("click", function () {
+            document.getElementById("receipt-container").style.display = "flex";
+            document.getElementById("overlay").style.display = "block"; // Show overlay
+        });
+    
+        // Close the receipt popup and overlay
+        document.getElementById("close-btn").addEventListener("click", function () {
+            document.getElementById("receipt-container").style.display = "none";
+            document.getElementById("overlay").style.display = "none"; // Hide overlay
+        });
+    </script>
+    
+</body>
+</html>
