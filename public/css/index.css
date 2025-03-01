@@ -42,8 +42,9 @@ body {
 
 .subtext {
     color: #777;
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
 }
 
 

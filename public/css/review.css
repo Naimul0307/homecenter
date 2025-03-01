@@ -40,12 +40,6 @@ body {
     align-items: center;
 }
 
-.review-title {
-    font-size: 36px;
-    color: #4F4F4F;
-    margin-top: 10px;
-}
-
 .review-body {
     margin-top: 20px;
 }
@@ -53,12 +47,13 @@ body {
 .message {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #777;
 }
 
 .description {
-    font-size: 16px;
-    color: #555;
+    color: #777;
+    font-size: 20px;
+    font-weight: bold;
     margin-top: 15px;
 }
 

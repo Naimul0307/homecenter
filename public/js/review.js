@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             receiptContainer.style.display = "none";
 
             // Redirect to index.html after closing animation
-            window.location.href = "index.html";
+            window.location.href = "print.html";
         }, 300); // Match the CSS animation duration (0.3s)
     });
 });
