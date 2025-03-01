@@ -14,8 +14,8 @@
 /* Receipt Container */
 .receipt-container {
     display: none; /* Make sure it's hidden initially */
-    width: 500px;
-    height: auto;
+    width: 98px;
+    height:auto;
     padding: 20px;
     border: 2px dashed #f72d84;
     border-radius: 10px;
@@ -239,13 +239,15 @@
 
 @media (max-width: 480px) {
     .receipt-container {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
+        height: 90%; /* Full width on mobile */
         padding: 10px;
     }
 
     .receipt-header .logo {
-        max-width: 350px;
-        height: 90px;
+        width: 750px;
+        height: 450px;
+        margin-top: 50px ;
     }
 
     .greeting,
@@ -270,3 +272,39 @@
         height: 25px;
     }
 }
+
+/* Media query for 1080x1920 screen (larger mobile devices) */
+@media (max-width: 1080px) and (max-height: 1920px) {
+    .receipt-container {
+        width: 50%; /* Slightly smaller container for portrait view */
+        padding: 20px;
+    }
+
+    .receipt-header .logo {
+        width: 500px;
+        height: 600px;
+    }
+
+    .greeting,
+    .thank-you,
+    .total,
+    .tribute,
+    .you-are {
+        font-size: 25px; /* Slightly larger font for better readability */
+    }
+
+    .items-list li {
+        font-size: 20px;
+    }
+
+    .footer {
+        height: 140px; /* Footer adjustment */
+    }
+
+    .close-btn {
+        font-size: 22px;
+        width: 40px;
+        height: 40px;
+    }
+}
+

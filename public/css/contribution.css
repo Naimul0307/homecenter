@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #f7f7f7;
+    background-color:#fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,16 +17,13 @@ body {
 
 /* Container Styling */
 .container {
-    max-width: 80%;
-    width: 80%;
+    width: 100%;
     padding: 30px;
-    border: 2px solid #f72d84;
     border-radius: 10px;
     background-color: #fff;
     text-align: center;
     box-shadow: 0 4px 10px rgba(233, 233, 233, 0.1);
 }
-
 /* Logo Styling */
 .logo {
     width: 635px;
@@ -43,6 +40,7 @@ body {
 
 /* Form Styling */
 .form {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -51,14 +49,12 @@ body {
     font-size: 1.25rem;
     font-weight: bold;
     color: #777;
-    margin-bottom: 10px;
 }
 
 .subtext {
     color: #777;
     font-size: 20px;
     font-weight: bold;
-    margin: 20px;
 }
 
 .submit-btn {
@@ -182,4 +178,46 @@ body {
     }
 }
 
+/* Additional Styling for 1080x1920 (higher resolution portrait) */
+@media (max-width: 1080px) and (max-height: 1920px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        height: 90%;
+        padding: 25px;
+    }
+
+    .logo {
+        width: 750px;
+        height: 450px;
+        margin-top: 50px;
+    }
+
+    .subtext {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .label {
+        font-size: 30px;
+    }
+
+    .submit-btn {
+        width: 50%; /* Larger button width */
+        max-width: 250px;
+    }
+
+    .button-container {
+        grid-template-columns: repeat(2, 1fr); /* 3 columns */
+        height: 600px;
+    }
+
+    .contribution-btn {
+        font-size: 25px;
+        padding: 8px 12px;
+    }
+}
 
