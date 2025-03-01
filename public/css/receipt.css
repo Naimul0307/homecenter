@@ -1,3 +1,5 @@
+
+/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -9,6 +11,7 @@
     z-index: 998;
 }
 
+/* Receipt Container */
 .receipt-container {
     display: none; /* Make sure it's hidden initially */
     width: 500px;
@@ -25,13 +28,12 @@
     z-index: 999;
 }
 
-
-/* Center the logo properly */
+/* Logo Styling */
 .receipt-header .logo {
     width: 100%;
     max-width: 100%;
     height: 150px;
-    margin: 0 auto 20px; /* Centers horizontally */
+    margin: 0 auto 20px;
     background-image: url('../background/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -41,6 +43,7 @@
     align-items: center;
 }
 
+/* Receipt Body */
 .receipt-body {
     margin-top: 20px;
 }
@@ -105,43 +108,43 @@
     margin-top: 15px;
 }
 
-/* Footer should cover the full container width */
+/* Footer */
 .footer {
     margin-top: 20px;
     text-align: center;
-    background-image: url('../background/FOOTER.png'); /* Set your image */
+    background-image: url('../background/FOOTER.png');
     background-size: cover;
     background-position: center;
-    height: 150px; /* Adjust height if necessary */
-    width: 100vw; /* Ensures it covers the full viewport width */
-    max-width: 100%; /* Prevents unexpected scaling */
+    height: 150px;
+    width: 100vw;
+    max-width: 100%;
 }
 
+/* Close Button */
 .close-btn {
     position: absolute;
     top: -39px;
     right: -12px;
     font-size: 20px;
     cursor: pointer;
-    background: #f72d84; /* Button background color */
+    background: #f72d84;
     border: none;
-    color: white; /* Text/icon color */
-    width: 35px; /* Adjust size */
-    height: 35px; /* Adjust size */
-    border-radius: 50%; /* Makes it round */
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease-in-out;
 }
 
-/* Hover effect */
 .close-btn:hover {
-    background: #d9246e; /* Darker shade for hover effect */
+    background: #d9246e;
 }
 
-/* Overlay animation */
+/* Keyframe Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -160,7 +163,6 @@
     }
 }
 
-/* Receipt popup animation */
 @keyframes scaleIn {
     from {
         transform: translate(-50%, -50%) scale(0.8);
@@ -183,7 +185,7 @@
     }
 }
 
-/* Apply animations */
+/* Apply Animations */
 .overlay {
     animation: fadeIn 0.3s ease-out forwards;
 }
@@ -200,3 +202,71 @@
     animation: scaleOut 0.3s ease-out forwards;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .receipt-container {
+        width: 90%; /* Make container smaller on tablets */
+        padding: 15px;
+    }
+
+    .receipt-header .logo {
+        max-width: 400px;
+        height: 100px;
+    }
+
+    .greeting,
+    .thank-you,
+    .total,
+    .tribute,
+    .you-are {
+        font-size: 16px;
+    }
+
+    .items-list li {
+        font-size: 12px; /* Adjust font size for items */
+    }
+
+    .footer {
+        height: 120px; /* Make footer smaller on tablets */
+    }
+
+    .close-btn {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .receipt-container {
+        width: 100%; /* Full width on mobile */
+        padding: 10px;
+    }
+
+    .receipt-header .logo {
+        max-width: 350px;
+        height: 90px;
+    }
+
+    .greeting,
+    .thank-you,
+    .total,
+    .tribute,
+    .you-are {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+
+    .items-list li {
+        font-size: 10px; /* Smaller font for items */
+    }
+
+    .footer {
+        height: 100px; /* Smaller footer on mobile */
+    }
+
+    .close-btn {
+        font-size: 16px;
+        width: 25px;
+        height: 25px;
+    }
+}

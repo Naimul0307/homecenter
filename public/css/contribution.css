@@ -12,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
 }
 
 /* Container Styling */
@@ -110,3 +111,75 @@ body {
     background-color: #f72d84;
     color: white;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 400px;
+        height: 100px;
+    }
+
+    .subtext {
+        font-size: 16px;
+    }
+
+    .submit-btn {
+        width: 70%;
+        max-width: 180px;
+    }
+    /* Adjust button grid layout for tablets */
+    .button-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+
+    .contribution-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .logo {
+        max-width: 350px;
+        height: 90px;
+    }
+
+    .submit-btn {
+        width: 80%;
+        max-width: 160px;
+    }
+
+    .subtext {
+        font-size: 16px;
+    }
+
+    /* Adjust button grid layout for mobile devices */
+    .button-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
+    }
+
+    .contribution-btn {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+}
+
+

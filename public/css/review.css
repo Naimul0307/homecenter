@@ -60,7 +60,7 @@ body {
 .confirm-button {
     margin-top: 20px;
     padding: 12px 24px;
-    background-color:#f72d84;
+    background-color: #f72d84;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -73,4 +73,56 @@ body {
 
 .confirm-button:hover {
     background-color: #f72d84;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .review-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .review-header .logo {
+        max-width: 400px;
+        height: 100px;
+    }
+
+    .message, .description {
+        font-size: 18px;
+    }
+
+    .confirm-button {
+        width: 70%;
+        max-width: 180px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .review-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .review-header .logo {
+        max-width: 350px;
+        height: 90px;
+    }
+
+    .message, .description {
+        font-size: 16px;
+    }
+
+    .confirm-button {
+        width: 80%;
+        max-width: 160px;
+    }
 }
