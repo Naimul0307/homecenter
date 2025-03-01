@@ -12,7 +12,8 @@
 
 .receipt-container {
     display: none; /* Make sure it's hidden initially */
-    width: 350px;
+    width: 500px;
+    height: auto;
     padding: 20px;
     border: 2px dashed #f72d84;
     border-radius: 10px;
@@ -26,15 +27,41 @@
 }
 
 
-.receipt-header {
+/* Logo Styling */
+.receipt-header .logo {
+    width: 450px;
+    height: 150px;
+    margin-bottom: 20px;
+    background-image: url('../background/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    max-width: 80%;
+    width: 80%;
+    padding: 30px;
+    border: 2px solid #f72d84;
+    border-radius: 10px;
+    background-color: #fff;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(233, 233, 233, 0.1);
 }
 
+/* Logo Styling */
 .logo {
-    width: 150px;
-    height: auto;
+    width: 635px;
+    height: 150px;
+    margin: 0 auto 20px; /* Centers horizontally */
+    background-image: url('../background/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .receipt-title {
     font-size: 32px;
     color: #4F4F4F;
@@ -108,12 +135,11 @@
 .footer {
     margin-top: 20px;
     text-align: center;
-}
-
-.footer-pattern {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+    background-image: url('../background/Untitled-1.jpg'); /* Set your image here */
+    background-size: cover; /* Ensures the image covers the full width and height */
+    background-position: center; /* Centers the image */
+    height: 150px; /* Adjust the height as needed */
+    width: 100%; /* Full width of the container */
 }
 
 .close-btn {
@@ -125,4 +151,81 @@
     background: none;
     border: none;
     color: #f72d84;
+}
+
+/* Overlay animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Receipt popup animation */
+@keyframes scaleIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Apply animations */
+.overlay {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.overlay.hidden {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+.receipt-container {
+    animation: scaleIn 0.3s ease-out forwards;
+}
+
+.receipt-container.hidden {
+    animation: scaleOut 0.3s ease-out forwards;
+}
+
+.print-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f72d84;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.print-btn:hover {
+    background-color: #d9246e;
 }
