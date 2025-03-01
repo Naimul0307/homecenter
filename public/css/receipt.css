@@ -14,10 +14,10 @@
 /* Receipt Container */
 .receipt-container {
     display: none; /* Make sure it's hidden initially */
-    width: 98px;
+    width: 300px;
     height:auto;
     padding: 20px;
-    border: 2px dashed #f72d84;
+    border: 2px dashed #919191;
     border-radius: 10px;
     background-color: #f6f6f6;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -72,7 +72,7 @@
 }
 
 .divider {
-    border-top: 2px dashed #f72d84;
+    border-top: 2px dashed #111011;
     margin: 20px 0;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .price {
-    color: #f72d84;
+    color: #131212;
 }
 
 .tribute {
@@ -103,7 +103,7 @@
 .you-are {
     font-size: 16px;
     font-weight: bold;
-    color: #f72d84;
+    color: #111011;
     text-transform: uppercase;
     margin-top: 15px;
 }
