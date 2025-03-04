@@ -17,7 +17,6 @@
     width: 300px;
     height:auto;
     padding: 20px;
-    border: 2px dashed #919191;
     border-radius: 10px;
     background-color: #f6f6f6;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -32,6 +31,7 @@
 .receipt-header .logo {
     width: 100%;
     max-width: 100%;
+    height: 100px;
     background-image: url('../background/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@
     background-image: url('../background/FOOTER.png');
     background-size: cover;
     background-position: center;
-    height: 150px;
+    height: 80px;
     width: 100vw;
     max-width: 100%;
 }
@@ -295,7 +295,7 @@
     }
 
     .footer {
-        height: 140px; /* Footer adjustment */
+        height: 100px; /* Footer adjustment */
     }
 
     .close-btn {
