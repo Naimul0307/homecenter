@@ -32,8 +32,6 @@
 .receipt-header .logo {
     width: 100%;
     max-width: 100%;
-    height: 150px;
-    margin: 0 auto 20px;
     background-image: url('../background/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -69,6 +67,7 @@
     font-size: 14px;
     color: #555;
     margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 .divider {
@@ -88,25 +87,17 @@
 }
 
 .tribute {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
     color: #333;
     margin-top: 10px;
 }
 
 .tribute-text {
     font-size: 14px;
-    color: #555;
-    margin-top: 5px;
-}
-
-.you-are {
-    font-size: 16px;
-    font-weight: bold;
     color: #111011;
-    text-transform: uppercase;
     margin-top: 15px;
 }
+
 
 /* Footer */
 .footer {
@@ -218,12 +209,14 @@
     .thank-you,
     .total,
     .tribute,
-    .you-are {
+    .tribute-text{
         font-size: 16px;
+        line-height: 1.5;
     }
 
     .items-list li {
         font-size: 12px; /* Adjust font size for items */
+        line-height: 1.5;
     }
 
     .footer {
@@ -254,7 +247,7 @@
     .thank-you,
     .total,
     .tribute,
-    .you-are {
+    .tribute-text{
         font-size: 14px; /* Smaller font for mobile */
     }
 
@@ -282,19 +275,22 @@
 
     .receipt-header .logo {
         width: 500px;
-        height: 600px;
+        height: 200px;
     }
 
     .greeting,
     .thank-you,
-    .total,
-    .tribute,
-    .you-are {
-        font-size: 25px; /* Slightly larger font for better readability */
+    .total{
+        font-size: 25px;
+        line-height: 3; /* Adjust the value as needed */
     }
-
+    
+    .tribute,
+    .tribute-text{
+        line-height: 3;
+    }
     .items-list li {
-        font-size: 20px;
+        line-height: 3; /* Adjust the value as needed */
     }
 
     .footer {
