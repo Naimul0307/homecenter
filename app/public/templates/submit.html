@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homecentre Honour</title>
+    <link rel="stylesheet" href="../css/submit.css">
+    <link rel="shortcut icon" href="../background/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo and Title -->
+        <div class="logo"></div>
+        <!-- Form -->
+        <form class="nameForm" id="nameForm">
+            <p class="subtext">Who are you honouring today?</p>
+            <label for="name" class="label">ENTER YOUR NAME</label>
+            <input type="text" id="name" class="input" placeholder="Enter your name here">
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+    </div>
+</body>
+<script>
+    document.getElementById('nameForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    localStorage.setItem('name', name);  // Store name in local storage
+    window.location.href = 'contribution.html';  // Redirect to contribution page
+});
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/review.css">
+    <link rel="stylesheet" href="../css/receipt.css">
+    <link rel="shortcut icon" href="../background/favicon.ico" type="image/x-icon">
+    
+    <title>HomeCentre - Review</title>
+</head>
+<body>
+    <div class="review-container">
+        <div class="review-header">
+            <div class="logo"></div>
+        </div>
+
+        <div class="review-body">
+            <p class="message">Here’s HER receipt</p>
+            <button class="confirm-button" id="review-confirm-btn">REVIEW AND CONFIRM</button>
+        </div>
+    </div>
+
+    <!-- Hidden Receipt Popup -->
+    <div class="overlay" id="overlay">
+        <div class="receipt-container" id="receipt-container">
+            <button class="close-btn" id="close-btn">&times;</button> <!-- Close Button -->
+            <div class="receipt-content">
+                <div class="receipt-header">
+                    <div class="logo"></div>
+                    <hr>
+                </div>
+
+                <hr class="divider">
+                
+                <div class="receipt-body">
+                    <p class="greeting"></p>
+                    <hr class="divider">
+                    <p class="thank-you">Thank you for</p>
+                    <ul class="items-list">
+                        <!-- Add your items dynamically here -->
+                    </ul>
+        
+                    <hr class="divider">
+        
+                    <p class="total">Total : <span class="price">PRICELESS</span></p>
+        
+                    <hr class="divider">
+        
+                    <p class="tribute">This isn’t just a receipt. It’s a tribute.</p>
+                    <p class="tribute-text">To the love, the sacrifices, the strength that hold homes together.</p>
+                </div>
+
+                <div class="footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/review.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homecentre Tribute Page</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../background/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo and Title -->
+        <div class="logo"></div>
+        <p class="subtext">HER work has always been there but today we count it all.<br>
+            Create a tribute receipt for a woman in your life.</p>
+                <!-- Start Button -->
+                <button id="startButton" class="start-button">
+                    TOUCH TO START
+                </button>
+    </div>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function () {
+        window.location.href = "submit.html"; // Redirects to submit.html on button click
+        });
+      </script>
+</body>
